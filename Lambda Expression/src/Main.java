@@ -53,5 +53,28 @@ public class Main {
         list.sort(enhancedComparator);
         System.out.println(list);
 
+        var sum= calculator(
+                (var a,var b)->//two parameters need to have equal type in this example var a, var b
+                                // incorrect (Integer a, var a)
+                                //correct (Integer a, Integer b)
+                        {//if you use "{}" you need to write return
+                            int c=  a + b;
+                            return c;
+                        },5,4
+                );
+        System.out.println(sum);
+
+        var multi=calculator((a,b)->(a*b),8.0,8.0);//in this example you don't use "{}" you don't need return
+        System.out.println(multi);
+
+        var string=calculator((a,b)->(a.toUpperCase()+" "+b.toUpperCase()),"Hugo","Baltazar");
+
+        //int resultado =Operation((x,y)->(8*8));
+
+    }
+    public static <T> T calculator(Operation<T> operation, T n1, T n2){
+        T result=operation.operation(n1,n2);
+        System.out.println("Result of the operation "+result);
+        return result;
     }
 }
