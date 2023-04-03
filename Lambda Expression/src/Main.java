@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BinaryOperator;
+
 //Functional interface
 //A functional interface is that only have one method abstract
 //to use a lambda expression the interface only would have ONE method abstract
@@ -69,7 +71,9 @@ public class Main {
 
         var string=calculator((a,b)->(a.toUpperCase()+" "+b.toUpperCase()),"Hugo","Baltazar");
 
-        //int resultado =Operation((x,y)->(8*8));
+        System.out.println("Binary Operator");
+        var multi2=calculator2((a,b)->(a*b),8.0,8.0);//in this example you don't use "{}" you don't need return
+        System.out.println(multi);
 
     }
     public static <T> T calculator(Operation<T> operation, T n1, T n2){
@@ -77,4 +81,10 @@ public class Main {
         System.out.println("Result of the operation "+result);
         return result;
     }
+    public static <T> T calculator2(BinaryOperator<T> operation, T n1, T n2){
+        T result=operation.apply(n1,n2);
+        System.out.println("\n Result of the operation "+result);
+        return result;
+    }
+
 }
