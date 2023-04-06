@@ -25,8 +25,8 @@ public class OtherExamble2 {
                 );
         System.out.println(Arrays.toString(ramdomList));
     }
-    public static <T> void processPoint(T t1, T t2, BiConsumer<T,T> consumer){
-        consumer.accept(t1, t2);
+    public static <T> void processPoint(T t1, T t2, BiConsumer<T,T> biConsumer){
+        biConsumer.accept(t1, t2);
     }
     public static String[] ramdomStringNames(int count, String[] names, Supplier<Integer> s){
         String[] values=new String[count];

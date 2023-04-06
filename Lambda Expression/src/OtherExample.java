@@ -26,9 +26,11 @@ public class OtherExample {
         names.addAll(List.of("Paco","Pancho","Hugo"));
         names.forEach(x->System.out.println(x));
 
+
         System.out.println("------");
         names.removeIf(x->x.startsWith("Pa"));
         names.forEach(x->System.out.println(x));
+
 
         System.out.println("Examples lambda expression for function");
         //Examples lambda expression for function
@@ -36,6 +38,7 @@ public class OtherExample {
         names.replaceAll(x->x.charAt(0)+" "+x.toUpperCase());
         System.out.println(names);
 
+        System.out.println("------------");
         String[] emptyString=new String[10];
         System.out.println(Arrays.toString(emptyString));
 
