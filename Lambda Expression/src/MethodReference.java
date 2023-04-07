@@ -23,7 +23,7 @@ public class MethodReference {
         calculator((a,b)->(a+b),8.2,8.3); //Method Reference
 
         // Supplier<nothing> object=()->new nothing(); //Lambda Expression
-        Supplier<Nothing> object= Nothing::new; //Method Reference
+        Supplier<Nothing> object= Nothing::new; //Method Reference.- new method of Nothing class
 
         Nothing pojo=object.get();
 
@@ -62,11 +62,12 @@ public class MethodReference {
         //result =result.transform((a)->a.toLowerCase());//Lambda Expression
         result =result.transform(String::toLowerCase);
 
+
        // Function<String, boolean> f0=((a)->a.isEmpty());//Lambda Expression
         Function<String, Boolean> f0=(String::isEmpty);
         boolean resultBoolean=result.transform(f0);
         System.out.println("Result "+resultBoolean);
-        
+
     }
     public static <T>  void calculator(BinaryOperator<T> biOperator, T t1, T t2 ){
         biOperator.apply(t1,t2);
