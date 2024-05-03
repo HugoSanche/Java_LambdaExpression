@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Example_Consumer {
@@ -20,5 +21,24 @@ public class Example_Consumer {
         System.out.println("---");
         list.removeIf(s->s.startsWith("P")); //delete Pedro and pablo
         list.forEach(s-> System.out.println(s));
+
+        list.replaceAll(s -> s.charAt(0) + " - " + s.toUpperCase());
+        System.out.println("-------");
+        list.forEach(s -> System.out.println(s));
+
+        String[] emptyStrings = new String[10];
+        System.out.println(Arrays.toString(emptyStrings));
+        Arrays.fill(emptyStrings,"");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        System.out.println("------------------");
+        Arrays.setAll(emptyStrings,i->""+i+i+1+"."+switch (i){
+            case 0->"cero";
+            case 1->"uno";
+            case 2->"dos";
+            default->"";
+        });
+        System.out.println(Arrays.toString(emptyStrings));
+
     }
 }
